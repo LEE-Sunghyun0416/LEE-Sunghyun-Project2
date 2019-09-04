@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <string.h>
+
+void change_k(char *str1, char *str2, int len1, int len2){
+	int i;
+	
+	str1[1] = 'K';
+	str1[2] = 'K';
+	str1[5] = 'K';
+	
+	str2[1] = 'K';
+	str2[2] = 'K';
+	str2[5] = 'K';
+	 
+	for(i = 0; i < len1; i++){
+		printf("%c", str1[i]);
+	}
+	printf("\n");
+	for(i = 0; i < len2; i++){
+		printf("%c", str2[i]);
+	}
+} 
+
+int main(){
+	char str1[100];
+	char str2[100];
+	
+	printf("Str1을 입력하시오 : ");
+	gets(str1); 
+	printf("Str2를 입력하시오 : ");
+	gets(str2);
+	puts(str1);
+	puts(str2);
+	 
+	int len1 = strlen(str1);
+	int len2 = strlen(str2);
+	
+	
+	
+	if(strcmp(str1, str2)>0){
+		printf("Str1문자열이 크다\n");
+	}else{
+		printf("Str2문자열이 크다\n");
+	} 
+	
+	change_k(str1, str2, len1, len2);
+	
+	return 0;
+	
+}
