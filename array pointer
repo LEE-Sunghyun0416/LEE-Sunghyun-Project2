@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+void copy_array(int *A, int *B, int size);
+void add_array(int *A, int *B, int *C, int size);
+
+int main(){
+	int arr[5] = {1,2,3,4,5};
+	int p[5];
+	int f[5];
+	
+	copy_array(arr, p, 5);
+	add_array(arr, p, f, 5);
+	
+	for(int i = 0; i < 5; i++){
+		printf("%d\n", f[i]);
+	}
+	
+	return 0;
+}
+
+void copy_array(int *A, int *B, int size){
+	
+	for(int i = 0; i < size; i++){
+		B[i] = A[i];
+	}
+}
+
+void add_array(int *A, int *B, int *C, int size){
+	
+	for(int i = 0; i < size; i++){
+		C[i] = A[i] + B[i];
+	}
+}
