@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+#define MAX_LINE 81
+#define MAX_CNT 100
+
+int main(){
+	int count = 0;
+	char str[MAX_LINE], longstr[MAX_CNT *MAX_LINE] = "";
+	
+	printf("문자열들을 입력하세요 : \n");
+	while(fgets(str, MAX_LINE, stdin) != NULL){
+		str[strlen(str)-1] = ' ';
+		strncat(longstr, str, MAX_LINE-1);
+		count++;
+		if(count >MAX_CNT){
+			break;
+		}
+	}
+	
+	printf("입력된 문자열의개수 :   %d\n",count);
+	printf("접합된 문자열 :   %s\n",longstr);
+	printf("접합된 문자열의 길이 :   %d\n",strlen(longstr));
+  
+  return 0;
+}
