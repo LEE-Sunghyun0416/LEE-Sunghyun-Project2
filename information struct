@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+
+struct date{
+	char month;
+	char day;
+};
+
+struct student{
+	int id;
+	char name[20];
+	struct date birthday;
+};
+
+int main(){
+	int i = 0, n = 0;
+	char c, name[20];
+	struct student s[100];
+	
+	printf("%s %7s %13s \n", "학번", "이름", "생일(mm dd)");
+	
+	while (scanf("%d %s %d %d", &s[n].id, s[n].name,
+				&s[n].birthday.month, &s[n].birthday.day) == 4);
+		n++;
+	
+	do{
+		printf("\n검색할 학생 이름?");
+		scanf("%s", name);
+		
+		for(i = 0; i < n; i++)
+			if(!strcmp(s[i].name, name))
+				printf("학번: %d 이름: %s 생일: %d월 %d일\n", s[i].id,
+						s[i].name, s[i].birthday.month,
+						s[i].birthday.day);
+						
+		printf("\n계속하시겠습니까?(Y/N)");
+		scanf("%c",&c);	
+	} while (c == 'Y');
+	
+	return 0;
+}
