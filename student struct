@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+
+struct student{
+		int id;
+		char name[20];
+		char major[20];
+	};
+	
+int main(){
+	struct student stud1, stud2, *p;
+	
+	stud1.id = 1401001;
+	strcpy(stud1.name, "홍길동");
+	strcpy(stud1.major, "정보과학");
+	
+	printf("학번 : %d 이름 : %s, 전공 : %s\n", stud1.id, stud1.name, stud1.major);
+	
+	stud2 = stud1;
+	printf("학번 : %d 이름 : %s, 전공 : %s\n", stud2.id, stud2.name, stud2.major);
+	 
+	p = &stud2;
+	printf("학번 : %d 이름 : %s, 전공 : %s\n", p ->id, p ->name, p -> major);
+	
+	p = (struct student *) malloc(sizeof(struct student *));
+	
+	p -> id = 1401002;
+	strcpy(p -> name, "박찬호");
+	strcpy(p -> major, "체육학");
+	printf("학번 : %d 이름 : %s, 전공 : %s\n", p ->id, p ->name, p -> major);
+	
+	return 0;
+}
